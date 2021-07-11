@@ -15,3 +15,12 @@ let mid = left + ((right - left) >>> 1)
 ```JavaScript
 map.set(key, (map.get(key) || 0) + nums)
 ```
+
+## Function
+1. Define a function that call immediately  
+   you can not do this by using a arrow funciton
+```JavaScript
+(function myFunc(arg1, arg2){
+    /*code*/
+}(arg1, arg2))
+```
