@@ -1,0 +1,35 @@
+<script>
+    var test = function (s) {
+        s = s.split('').join('#')
+        s = '!#' + s + '#?'
+        console.log(s)
+
+        const n = s.length
+        let
+            pivot = 0,
+            maxRight = 0,
+            f = new Array(n).fill(0),
+            res = 0
+
+        for (let i = 0; i < n; i++) {
+            f[i] = i < maxRight ? Math.min(f[2 * pivot - i], maxRight - i + 1) : 1
+            while (i + f[i] < n && i - f[i] >= 0 && s[i + f[i]] == s[i - f[i]]) {
+                f[i]++
+            }
+            if (i + f[i] > maxRight) {
+                maxRight = i + f[i] - 1
+                pivot = i
+            }
+            res += f[i] >>> 1
+        }
+
+        return res
+    };
+
+    //Input
+    let
+        s = "abc"
+    //Output
+    //2
+    console.log(test(s))
+</script>
