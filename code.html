@@ -1,39 +1,16 @@
 <script>
-    function TreeNode(val, left, right) {
-        this.val = (val === undefined ? 0 : val)
-        this.left = (left === undefined ? null : left)
-        this.right = (right === undefined ? null : right)
-    }
+    var test = function (n) {
 
-    var test = function (nums) {
-        const
-            root = (function toTree(left, right) {
-                if (left > right) {
-                    return null
-                }
-                if (left == right) {
-                    return new TreeNode(nums[left])
-                }
-
-                const
-                    node = new TreeNode(),
-                    mid = ((right - left) >>> 1) + left
-
-                node.val = nums[mid]
-                node.left = toTree(left, mid - 1)
-                node.right = toTree(mid + 1, right)
-                return node
-            }(0, nums.length - 1))
-
-        return root
     };
 
 
     //Input
     let
-        nums = [-10, -3, 0, 5, 9]
-
+        par1 =
+            2
     //Output
     //2
-    console.log(test(nums))
+    console.log(test(
+        par1
+    ))
 </script>
