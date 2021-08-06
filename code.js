@@ -1,36 +1,11 @@
-var test = function (paragraph, banned) {
-    const words = new Map();
-    const n = paragraph.length;
-    const letters = `qwertyuiopasdfghjklzxcvbnm`;
+const test = (word) => {
 
-    paragraph = paragraph.toLowerCase();
-    banned = banned.join(',').toLowerCase().split(',');
-    console.log(paragraph, banned);
-
-    for (let i = 0; i < n; i++) {
-        let word = '';
-        while (letters.includes(paragraph[i])) {
-            word += paragraph[i++];
-        }
-        words.set(word, (words.has(word) ? words.get(word) : 0) + 1);
-    }
-
-    const res = Array.from(words.entries()).sort((a, b) => b[1] - a[1]);
-    console.log(res)
-    for (const ans of res) {
-        if (ans[0] != '' && !banned.includes(ans[0])) {
-            return ans[0];
-        }
-    }
-};
+}
 
 
 //Input
-let
-    par1 =
-        "Bob. hIt, baLl",
-    par2 =
-        ["bob", "hit"]
+const par1 = "FlaG"
+const par2 = ["bob", "hit"]
 
 //Output
 console.log(test(
