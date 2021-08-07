@@ -1,10 +1,10 @@
-const test = (word) => {
+const test = (root, targetSum) => {
 
 }
 
 
 //Input
-const par1 = "FlaG"
+const par1 = 1
 const par2 = ["bob", "hit"]
 
 //Output
