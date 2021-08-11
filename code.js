@@ -1,81 +1,12 @@
-const board = [
-    "abcde",
-    "fghij",
-    "klmno",
-    "pqrst",
-    "uvwxy",
-    "z...."
-]
-const map = new Map()
-for (let i = 0; i < 26; i++) {
-    map.set(
-        String.fromCharCode('a'.charCodeAt() + i),
-        [Math.floor(i / 5), i % 5]
-    )
-}
-
-const test = (target) => {
-    const path = []
-    let row = 0
-    let col = 0
-
-    target.split('')
-    for (const char of target) {
-        [r, c] = map.get(char)
-
-        while (r != row || c != col) {
-            if (r > row) {
-                while (r > row) {
-                    row++
-                    if (board[row][col] == '.') {
-                        row--
-                        break
-                    }
-                    path.push('D')
-                }
-            } else {
-                while (r < row) {
-                    row--
-                    if (board[row][col] == '.') {
-                        row++
-                        break
-                    }
-                    path.push('U')
-                }
-            }
-            if (c > col) {
-                while (c > col) {
-                    col++
-                    if (board[row][col] == '.') {
-                        col--
-                        break
-                    }
-                    path.push('R')
-
-                }
-            } else {
-                while (c < col) {
-                    col--
-                    if (board[row][col] == '.') {
-                        col++
-                        break
-                    }
-                    path.push('L')
-                }
-            }
-        }
-
-        path.push('!')
-    }
-
-    return path.join("")
+const test = (nums) => {
+    
 }
 
 
 //Input
 
-const par1 = "zdz"
-const par2 = 2
+const par1 = [2, 4, 6, 8, 10]
+const par2 = [2, 7, 13, 19]
 
 //Output
 console.log(test(
