@@ -1,11 +1,15 @@
-const test = (strs) => {
+function ListNode(val, next) {
+    this.val = (val === undefined ? 0 : val)
+    this.next = (next === undefined ? null : next)
+}
+const test = (head, k) => {
 
 }
 
 
 //Input
 
-const par1 = ["flower", "flow", "flight"]
+const par1 = 'bbbbab'
 const par2 = 1
 
 //Output
