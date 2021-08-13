@@ -1,16 +1,13 @@
-function ListNode(val, next) {
-    this.val = (val === undefined ? 0 : val)
-    this.next = (next === undefined ? null : next)
-}
-const test = (head, k) => {
+const test = (s) => {
 
 }
+
 
 
 //Input
 
-const par1 = 'bbbbab'
-const par2 = 1
+const par1 = '((((())'
+const par2 = 'BAA'
 
 //Output
 console.log(test(
