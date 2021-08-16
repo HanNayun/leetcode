@@ -1,33 +1,10 @@
-const test = (candidates, target) => {
-    candidates.sort((a, b) => a - b)
-    const res = []
-    const n = candidates.length;
+const test = (nums, k) => {
 
-    (function greed(path, sum, begin) {
-        if (sum == target) {
-            res.push([...path])
-            return
-        }
-
-        for (let i = begin; i < n; i++) {
-            if (i > begin && candidates[i] == candidates[i - 1]) continue
-            const rs = sum + candidates[i]
-            if (rs <= target) {
-                path.push(candidates[i])
-                greed(path, rs, i + 1)
-                path.pop()
-            }
-            else break
-        }
-    })([], 0, 0)
-    return res
 }
 
-
-
 //Input
-const par1 = [1, 1, 1, 1, 2, 3, 4]
-const par2 = 6
+const par1 = 1
+const par2 = 1
 const par3 = 50
 const par4 = 15
 const par5 = 3
