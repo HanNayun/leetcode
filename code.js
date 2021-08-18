@@ -1,62 +1,13 @@
-const test = (cards) => {
-    const TARGET = 24;
-    const [ADD, MULTIPLY, SUBTRACT, DIVIDE] = [0, 1, 2, 3];
-    const EPSILON = 10e-6;
-
-    return (function slove(list) {
-        if (list.length == 0) {
-            return false;
-        }
-        if (list.length == 1) {
-            return Math.abs(list.pop() - TARGET) < EPSILON;
-        }
-
-        const size = list.length;
-        for (let i = 0; i < size; i++) {
-            for (let j = 0; j < size; j++) {
-                if (i != j) {
-                    const list2 = [];
-                    for (let k = 0; k < size; k++) {
-                        if (k != i && k != j) {
-                            list2.push(list[k]);
-                        }
-                    }
-                    for (let k = 0; k < 4; k++) {
-                        if (k < 2 && i > j) {
-                            continue;
-                        }
-                        if (k == ADD) {
-                            list2.push(list[i] + list[j]);
-                        }
-                        else if (k == MULTIPLY) {
-                            list2.push(list[i] * list[j]);
-                        }
-                        else if (k == SUBTRACT) {
-                            list2.push(list[i] - list[j]);
-                        }
-                        else if (k == DIVIDE) {
-                            if (Math.abs(list[j]) < EPSILON) {
-                                continue;
-                            }
-                            else {
-                                list2.push(list[i] / list[j]);
-                            }
-                        }
-                        if (slove(list2)) {
-                            return true;
-                        }
-                        list2.pop();
-                    }
-                }
-            }
-        }
-        return false;
-    })(cards)
-
+const test = (s) => {
+    
 };
 
 //Input
-const par1 = [1, 2, 1, 2]
+const par1 = "1+(-2+3)"
+const a =
+    ["1 + 1",
+        "(1+(4+5+2)-3)+(6+8)",
+        " 2-1 + 2 "]
 const par2 = 'bat'
 const par3 = 50
 const par4 = 15
