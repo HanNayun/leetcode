@@ -9,4 +9,4 @@
 2. #CONTEST. 更新每周 LeectCode 周赛(包括双周赛)写出来的题目.
 
 ## 反馈
-如果发现题解存在错误或有更好的解法及其他意见， 欢迎邮件<HanNayun.lemon@gmail.com>。
+如果发现题解存在错误或有更好的解法及其他意见， 欢迎邮件<HanNayun0.lemon@gmail.com>。
