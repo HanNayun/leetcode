@@ -1,18 +1,20 @@
-[Link](https://leetcode-cn.com/problems/binary-tree-level-order-traversal/)
+[Link](https://leetcode-cn.com/problems/cong-shang-dao-xia-da-yin-er-cha-shu-lcof/)
+
+## Code
+<hr/>
 
 JavaScript
 ```JavaScript
 /**
  * Definition for a binary tree node.
- * function TreeNode(val, left, right) {
- *     this.val = (val===undefined ? 0 : val)
- *     this.left = (left===undefined ? null : left)
- *     this.right = (right===undefined ? null : right)
+ * function TreeNode(val) {
+ *     this.val = val;
+ *     this.left = this.right = null;
  * }
  */
 /**
  * @param {TreeNode} root
- * @return {number[][]}
+ * @return {number[]}
  */
 var levelOrder = function (root) {
     const queue = [];
@@ -24,11 +26,10 @@ var levelOrder = function (root) {
         const layer = [];
         while (queue.length) {
             const node = queue.shift();
-            layer.push(node.val);
+            res.push(node.val);
             node.left && temp.push(node.left);
             node.right && temp.push(node.right);
         }
-        res.push(layer);
         queue.push(...temp);
     }
     return res;
